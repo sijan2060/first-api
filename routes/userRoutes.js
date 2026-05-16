@@ -52,6 +52,7 @@ router.post("/register", async (req, res) => {
         }
             // Compare entered password with hashed password 
             const isMatch = await bcrypt.compare(password, user.password);
+
             // Wrong Password
             if (!isMatch) {
                 return res.status(400).json({
